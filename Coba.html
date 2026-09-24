@@ -1,0 +1,2863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+<body> 
+    <h1>Selamat Datang Di Website Musik</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed voluptate exercitationem beatae tempore, velit veritatis quidem quisquam neque, nesciunt illo quo quibusdam natus adipisci. Ducimus blanditiis mollitia fuga praesentium saepe?</p>
+</body>
+</html>
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Website Musik Ku</title>
+
+  <!-- BOOTSTRAP -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: #0b0b0f;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: #111116;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top right, #6f42c1, transparent 40%),
+        linear-gradient(135deg, #11111a, #09090c);
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      font-weight: 800;
+    }
+
+    .music-card {
+      background: #17171e;
+      border: 1px solid #292933;
+      border-radius: 18px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .music-card:hover {
+      transform: translateY(-6px);
+      border-color: #8b5cf6;
+    }
+
+    .cover {
+      height: 180px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #8b5cf6, #ec4899);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 70px;
+      margin-bottom: 18px;
+    }
+
+    .player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #15151b;
+      border-top: 1px solid #30303a;
+      padding: 15px;
+      z-index: 1000;
+    }
+
+    .progress {
+      cursor: pointer;
+    }
+
+    .btn-play {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+    .search-box {
+      background: #181820;
+      border: 1px solid #30303a;
+      color: white;
+    }
+
+    .search-box::placeholder {
+      color: #999;
+    }
+
+    footer {
+      padding-bottom: 130px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">
+      🎵 MusikKu
+    </a>
+
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#musik">
+            Musik
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#tentang">
+            Tentang
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <div class="col-lg-8">
+
+        <p class="text-info fw-bold">
+          🎧 MUSIC PLATFORM
+        </p>
+
+        <h1>
+          Selamat Datang di
+          <span class="text-info">
+            Website Musik Ku
+          </span>
+        </h1>
+
+        <p class="lead text-secondary">
+          Dengarkan musik favoritmu kapan saja.
+          Temukan lagu baru dan nikmati musik dengan tampilan modern.
+        </p>
+
+        <a
+          href="#musik"
+          class="btn btn-info btn-lg fw-bold">
+          🎵 Jelajahi Musik
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= MUSIC ================= -->
+
+<section id="musik" class="py-5">
+
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+      <h2 class="fw-bold">
+        🎶 Musik
+      </h2>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <input
+      type="text"
+      id="search"
+      class="form-control search-box form-control-lg mb-5"
+      placeholder="🔎 Cari lagu...">
+
+
+    <div class="row g-4" id="musicList">
+
+
+      <!-- SONG 1 -->
+
+      <div
+        class="col-md-6 col-lg-4 song"
+        data-name="Dream Music">
+
+        <div class="music-card">
+
+          <div class="cover">
+            🎵
+          </div>
+
+          <h4>
+            Dream Music
+          </h4>
+
+          <p class="text-secondary">
+            MusikKu
+          </p>
+
+          <button
+            class="btn btn-info w-100"
+            onclick="playSong(
+              'Dream Music',
+              'music/song1.mp3'
+            )">
+
+            ▶️ Play
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SONG 2 -->
+
+      <div
+        class="col-md-6 col-lg-4 song"
+        data-name="Night Vibes">
+
+        <div class="music-card">
+
+          <div class="cover">
+            🌙
+          </div>
+
+          <h4>
+            Night Vibes
+          </h4>
+
+          <p class="text-secondary">
+            MusikKu
+          </p>
+
+          <button
+            class="btn btn-info w-100"
+            onclick="playSong(
+              'Night Vibes',
+              'music/song2.mp3'
+            )">
+
+            ▶️ Play
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SONG 3 -->
+
+      <div
+        class="col-md-6 col-lg-4 song"
+        data-name="Morning Energy">
+
+        <div class="music-card">
+
+          <div class="cover">
+            ☀️
+          </div>
+
+          <h4>
+            Morning Energy
+          </h4>
+
+          <p class="text-secondary">
+            MusikKu
+          </p>
+
+          <button
+            class="btn btn-info w-100"
+            onclick="playSong(
+              'Morning Energy',
+              'music/song3.mp3'
+            )">
+
+            ▶️ Play
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="tentang" class="py-5">
+
+  <div class="container text-center">
+
+    <h2 class="fw-bold">
+      Tentang Website
+    </h2>
+
+    <p class="text-secondary mt-3">
+      Website musik sederhana yang dibuat menggunakan
+      HTML, CSS, JavaScript, dan Bootstrap.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="text-center py-5">
+
+  <p class="text-secondary">
+    © 2026 MusikKu
+  </p>
+
+</footer>
+
+
+<!-- ================= MUSIC PLAYER ================= -->
+
+<div class="player">
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <!-- SONG INFO -->
+
+      <div class="col-md-4">
+
+        <strong id="nowPlaying">
+          Belum ada lagu
+        </strong>
+
+        <br>
+
+        <small class="text-secondary">
+          MusikKu
+        </small>
+
+      </div>
+
+
+      <!-- CONTROLS -->
+
+      <div class="col-md-4 text-center">
+
+        <button
+          class="btn btn-outline-light me-2"
+          onclick="previousSong()">
+
+          ⏮️
+
+        </button>
+
+        <button
+          id="playButton"
+          class="btn btn-info btn-play"
+          onclick="togglePlay()">
+
+          ▶️
+
+        </button>
+
+        <button
+          class="btn btn-outline-light ms-2"
+          onclick="nextSong()">
+
+          ⏭️
+
+        </button>
+
+      </div>
+
+
+      <!-- VOLUME -->
+
+      <div class="col-md-4">
+
+        <input
+          type="range"
+          id="volume"
+          class="form-range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1">
+
+      </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <input
+      type="range"
+      id="progress"
+      class="form-range progress mt-2"
+      min="0"
+      value="0"
+      step="1">
+
+  </div>
+
+</div>
+
+
+<!-- AUDIO -->
+
+<audio id="audio"></audio>
+
+
+<!-- BOOTSTRAP JS -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const audio = document.getElementById("audio");
+
+const playButton =
+  document.getElementById("playButton");
+
+const nowPlaying =
+  document.getElementById("nowPlaying");
+
+const progress =
+  document.getElementById("progress");
+
+const volume =
+  document.getElementById("volume");
+
+
+let songs = [
+
+  {
+    name: "Dream Music",
+    file: "music/song1.mp3"
+  },
+
+  {
+    name: "Night Vibes",
+    file: "music/song2.mp3"
+  },
+
+  {
+    name: "Morning Energy",
+    file: "music/song3.mp3"
+  }
+
+];
+
+
+let currentSong = 0;
+
+
+// PLAY SONG
+
+function playSong(name, file) {
+
+  currentSong =
+    songs.findIndex(song => song.file === file);
+
+  audio.src = file;
+
+  nowPlaying.textContent = name;
+
+  audio.play();
+
+  playButton.textContent = "⏸️";
+}
+
+
+// PLAY / PAUSE
+
+function togglePlay() {
+
+  if (!audio.src) {
+
+    playSong(
+      songs[0].name,
+      songs[0].file
+    );
+
+    return;
+
+  }
+
+  if (audio.paused) {
+
+    audio.play();
+
+    playButton.textContent = "⏸️";
+
+  } else {
+
+    audio.pause();
+
+    playButton.textContent = "▶️";
+
+  }
+
+}
+
+
+// NEXT
+
+function nextSong() {
+
+  currentSong++;
+
+  if (currentSong >= songs.length) {
+    currentSong = 0;
+  }
+
+  playSong(
+    songs[currentSong].name,
+    songs[currentSong].file
+  );
+
+}
+
+
+// PREVIOUS
+
+function previousSong() {
+
+  currentSong--;
+
+  if (currentSong < 0) {
+    currentSong = songs.length - 1;
+  }
+
+  playSong(
+    songs[currentSong].name,
+    songs[currentSong].file
+  );
+
+}
+
+
+// PROGRESS
+
+audio.addEventListener(
+  "loadedmetadata",
+  function() {
+
+    progress.max =
+      audio.duration;
+
+  }
+);
+
+
+audio.addEventListener(
+  "timeupdate",
+  function() {
+
+    progress.value =
+      audio.currentTime;
+
+  }
+);
+
+
+progress.addEventListener(
+  "input",
+  function() {
+
+    audio.currentTime =
+      progress.value;
+
+  }
+);
+
+
+// VOLUME
+
+volume.addEventListener(
+  "input",
+  function() {
+
+    audio.volume =
+      volume.value;
+
+  }
+);
+
+
+// AUTO NEXT
+
+audio.addEventListener(
+  "ended",
+  function() {
+
+    nextSong();
+
+  }
+);
+
+
+// SEARCH
+
+document
+  .getElementById("search")
+  .addEventListener(
+    "input",
+    function() {
+
+      const keyword =
+        this.value.toLowerCase();
+
+      document
+        .querySelectorAll(".song")
+        .forEach(function(song) {
+
+          const name =
+            song.dataset.name.toLowerCase();
+
+          if (name.includes(keyword)) {
+
+            song.style.display = "";
+
+          } else {
+
+            song.style.display = "none";
+
+          }
+
+        });
+
+    }
+  );
+
+</script>
+
+</body>
+</html>
+```
+X
+
+```html
+
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MusikKu</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background: #09090d;
+      color: white;
+      padding-bottom: 110px;
+    }
+
+    .navbar {
+      background: #111118;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 20%, #6f42c1, transparent 35%),
+        linear-gradient(135deg, #11111a, #09090d);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 75px);
+      font-weight: 800;
+    }
+
+    .music-card {
+      background: #17171f;
+      border: 1px solid #292936;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .25s;
+    }
+
+    .music-card:hover {
+      transform: translateY(-7px);
+      border-color: #0dcaf0;
+    }
+
+    .cover {
+      height: 190px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 65px;
+      background: linear-gradient(135deg, #6610f2, #0dcaf0);
+    }
+
+    .category-btn {
+      border-radius: 50px;
+    }
+
+    .player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #121219;
+      border-top: 1px solid #30303b;
+      padding: 14px;
+    }
+
+    .player-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    .search {
+      background: #17171f;
+      border: 1px solid #30303b;
+      color: white;
+    }
+
+    .search:focus {
+      background: #17171f;
+      color: white;
+      border-color: #0dcaf0;
+    }
+
+    .search::placeholder {
+      color: #888;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">
+      🎵 MusikKu
+    </a>
+
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse"
+      id="navbar">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="#home">
+            Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#musik">
+            Musik
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#tentang">
+            Tentang
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="container">
+
+    <span class="badge text-bg-info mb-3">
+      🎧 MUSIC PLATFORM
+    </span>
+
+    <h1>
+      Selamat Datang di
+      <span class="text-info">
+        Website Musik Ku
+      </span>
+    </h1>
+
+    <p class="lead text-secondary mt-3">
+      Temukan musik favoritmu dan nikmati semuanya
+      dalam satu tempat.
+    </p>
+
+    <a
+      href="#musik"
+      class="btn btn-info btn-lg fw-bold mt-3">
+      🎵 Mulai Mendengarkan
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- MUSIC -->
+<section id="musik" class="py-5">
+
+  <div class="container">
+
+    <h2 class="fw-bold mb-4">
+      🎶 Koleksi Musik
+    </h2>
+
+
+    <!-- SEARCH -->
+    <input
+      id="search"
+      class="form-control form-control-lg search mb-4"
+      placeholder="🔎 Cari lagu atau penyanyi...">
+
+
+    <!-- CATEGORY -->
+    <div class="d-flex flex-wrap gap-2 mb-5">
+
+      <button
+        class="btn btn-info category-btn"
+        onclick="filterMusic('semua')">
+        Semua
+      </button>
+
+      <button
+        class="btn btn-outline-info category-btn"
+        onclick="filterMusic('viral')">
+        🔥 Viral
+      </button>
+
+      <button
+        class="btn btn-outline-warning category-btn"
+        onclick="filterMusic('rohani')">
+        ✝️ Rohani
+      </button>
+
+      <button
+        class="btn btn-outline-light category-btn"
+        onclick="filterMusic('indonesia')">
+        🇮🇩 Indonesia
+      </button>
+
+    </div>
+
+
+    <!-- MUSIC LIST -->
+    <div
+      class="row g-4"
+      id="musicList">
+
+
+      <!-- VIRAL -->
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="viral"
+        data-search="teh hijau tulus">
+
+        <div class="music-card">
+
+          <div class="cover">
+            🍵
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-danger">
+              🔥 VIRAL
+            </span>
+
+            <h4 class="mt-3">
+              Teh Hijau
+            </h4>
+
+            <p class="text-secondary">
+              Tulus
+            </p>
+
+            <button
+              class="btn btn-info w-100"
+              onclick="playMusic(
+                'Teh Hijau',
+                'music/teh-hijau.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="viral"
+        data-search="sesi potret enau">
+
+        <div class="music-card">
+
+          <div class="cover">
+            📸
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-danger">
+              🔥 VIRAL
+            </span>
+
+            <h4 class="mt-3">
+              Sesi Potret
+            </h4>
+
+            <p class="text-secondary">
+              eńau
+            </p>
+
+            <button
+              class="btn btn-info w-100"
+              onclick="playMusic(
+                'Sesi Potret',
+                'music/sesi-potret.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="viral"
+        data-search="ini abadi perunggu">
+
+        <div class="music-card">
+
+          <div class="cover">
+            ♾️
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-danger">
+              🔥 VIRAL
+            </span>
+
+            <h4 class="mt-3">
+              Ini Abadi
+            </h4>
+
+            <p class="text-secondary">
+              Perunggu
+            </p>
+
+            <button
+              class="btn btn-info w-100"
+              onclick="playMusic(
+                'Ini Abadi',
+                'music/ini-abadi.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ROHANI -->
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="rohani"
+        data-search="rohani pujian penyembahan">
+
+        <div class="music-card">
+
+          <div class="cover">
+            ✝️
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-warning text-dark">
+              ✝️ ROHANI
+            </span>
+
+            <h4 class="mt-3">
+              Lagu Rohani 1
+            </h4>
+
+            <p class="text-secondary">
+              Koleksi Rohani
+            </p>
+
+            <button
+              class="btn btn-warning w-100"
+              onclick="playMusic(
+                'Lagu Rohani 1',
+                'music/rohani1.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="rohani"
+        data-search="rohani worship">
+
+        <div class="music-card">
+
+          <div class="cover">
+            🙏
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-warning text-dark">
+              ✝️ ROHANI
+            </span>
+
+            <h4 class="mt-3">
+              Lagu Rohani 2
+            </h4>
+
+            <p class="text-secondary">
+              Worship
+            </p>
+
+            <button
+              class="btn btn-warning w-100"
+              onclick="playMusic(
+                'Lagu Rohani 2',
+                'music/rohani2.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- INDONESIA -->
+
+      <div
+        class="col-md-6 col-lg-4 music-item"
+        data-category="indonesia"
+        data-search="dunia yang nanti raim laode">
+
+        <div class="music-card">
+
+          <div class="cover">
+            🌎
+          </div>
+
+          <div class="p-4">
+
+            <span class="badge bg-success">
+              🇮🇩 INDONESIA
+            </span>
+
+            <h4 class="mt-3">
+              Dunia Yang Nanti
+            </h4>
+
+            <p class="text-secondary">
+              Raim Laode
+            </p>
+
+            <button
+              class="btn btn-success w-100"
+              onclick="playMusic(
+                'Dunia Yang Nanti',
+                'music/dunia-yang-nanti.mp3'
+              )">
+              ▶️ Play
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section
+  id="tentang"
+  class="py-5 bg-black">
+
+  <div class="container text-center">
+
+    <h2 class="fw-bold">
+      🎵 Tentang MusikKu
+    </h2>
+
+    <p class="text-secondary">
+      Website musik buatan sendiri menggunakan
+      HTML, CSS, JavaScript dan Bootstrap.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- PLAYER -->
+<div class="player">
+
+  <div class="container">
+
+    <div class="row align-items-center g-2">
+
+      <div class="col-md-4">
+
+        <strong id="currentTitle">
+          Belum ada lagu
+        </strong>
+
+        <br>
+
+        <small class="text-secondary">
+          MusikKu
+        </small>
+
+      </div>
+
+
+      <div class="col-md-4 text-center">
+
+        <button
+          class="btn btn-outline-light player-btn"
+          onclick="previousSong()">
+          ⏮️
+        </button>
+
+        <button
+          id="playBtn"
+          class="btn btn-info player-btn mx-2"
+          onclick="togglePlay()">
+          ▶️
+        </button>
+
+        <button
+          class="btn btn-outline-light player-btn"
+          onclick="nextSong()">
+          ⏭️
+        </button>
+
+      </div>
+
+
+      <div class="col-md-4">
+
+        <input
+          id="volume"
+          type="range"
+          class="form-range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1">
+
+      </div>
+
+    </div>
+
+
+    <input
+      id="progress"
+      type="range"
+      class="form-range mt-2"
+      min="0"
+      value="0">
+
+  </div>
+
+</div>
+
+
+<audio id="audio"></audio>
+
+
+<script>
+
+const audio =
+  document.getElementById("audio");
+
+const playBtn =
+  document.getElementById("playBtn");
+
+const title =
+  document.getElementById("currentTitle");
+
+const progress =
+  document.getElementById("progress");
+
+const volume =
+  document.getElementById("volume");
+
+
+const songs = [
+
+  {
+    name: "Teh Hijau",
+    file: "music/teh-hijau.mp3"
+  },
+
+  {
+    name: "Sesi Potret",
+    file: "music/sesi-potret.mp3"
+  },
+
+  {
+    name: "Ini Abadi",
+    file: "music/ini-abadi.mp3"
+  },
+
+  {
+    name: "Lagu Rohani 1",
+    file: "music/rohani1.mp3"
+  },
+
+  {
+    name: "Lagu Rohani 2",
+    file: "music/rohani2.mp3"
+  },
+
+  {
+    name: "Dunia Yang Nanti",
+    file: "music/dunia-yang-nanti.mp3"
+  }
+
+];
+
+
+let current = 0;
+
+
+// PLAY
+
+function playMusic(name, file) {
+
+  current =
+    songs.findIndex(
+      song => song.file === file
+    );
+
+  audio.src = file;
+
+  title.textContent = name;
+
+  audio.play();
+
+  playBtn.textContent = "⏸️";
+}
+
+
+// PAUSE / PLAY
+
+function togglePlay() {
+
+  if (!audio.src) {
+
+    playMusic(
+      songs[0].name,
+      songs[0].file
+    );
+
+    return;
+  }
+
+  if (audio.paused) {
+
+    audio.play();
+
+    playBtn.textContent = "⏸️";
+
+  } else {
+
+    audio.pause();
+
+    playBtn.textContent = "▶️";
+
+  }
+
+}
+
+
+// NEXT
+
+function nextSong() {
+
+  current++;
+
+  if (current >= songs.length) {
+    current = 0;
+  }
+
+  playMusic(
+    songs[current].name,
+    songs[current].file
+  );
+
+}
+
+
+// PREVIOUS
+
+function previousSong() {
+
+  current--;
+
+  if (current < 0) {
+    current = songs.length - 1;
+  }
+
+  playMusic(
+    songs[current].name,
+    songs[current].file
+  );
+
+}
+
+
+// PROGRESS
+
+audio.addEventListener(
+  "loadedmetadata",
+  () => {
+    progress.max = audio.duration;
+  }
+);
+
+
+audio.addEventListener(
+  "timeupdate",
+  () => {
+    progress.value = audio.currentTime;
+  }
+);
+
+
+progress.addEventListener(
+  "input",
+  () => {
+    audio.currentTime = progress.value;
+  }
+);
+
+
+// VOLUME
+
+volume.addEventListener(
+  "input",
+  () => {
+    audio.volume = volume.value;
+  }
+);
+
+
+// AUTO NEXT
+
+audio.addEventListener(
+  "ended",
+  () => {
+    nextSong();
+  }
+);
+
+
+// SEARCH
+
+document
+  .getElementById("search")
+  .addEventListener(
+    "input",
+    function () {
+
+      const keyword =
+        this.value.toLowerCase();
+
+      document
+        .querySelectorAll(".music-item")
+        .forEach(item => {
+
+          const data =
+            item.dataset.search;
+
+          if (
+            data.includes(keyword)
+          ) {
+
+            item.classList.remove("hidden");
+
+          } else {
+
+            item.classList.add("hidden");
+
+          }
+
+        });
+
+    }
+  );
+
+
+// FILTER
+
+function filterMusic(category) {
+
+  document
+    .querySelectorAll(".music-item")
+    .forEach(item => {
+
+      if (
+        category === "semua" ||
+        item.dataset.category === category
+      ) {
+
+        item.classList.remove("hidden");
+
+      } else {
+
+        item.classList.add("hidden");
+
+      }
+
+    });
+
+}
+
+</script>
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+</body>
+</html>
+```
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MusikKu V3</title>
+
+  <!-- BOOTSTRAP -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #08080c;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding-bottom: 120px;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      background: rgba(10, 10, 15, .95);
+      border-bottom: 1px solid #292932;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(13, 202, 240, .35),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 20% 80%,
+          rgba(111, 66, 193, .35),
+          transparent 35%
+        ),
+        #0b0b11;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      font-weight: 900;
+    }
+
+    .gradient-text {
+      background: linear-gradient(
+        90deg,
+        #0dcaf0,
+        #8b5cf6,
+        #ec4899
+      );
+
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* SEARCH */
+
+    .search {
+      background: #15151c;
+      border: 1px solid #30303a;
+      color: white;
+    }
+
+    .search:focus {
+      background: #15151c;
+      color: white;
+      border-color: #0dcaf0;
+      box-shadow: none;
+    }
+
+    .search::placeholder {
+      color: #888;
+    }
+
+    /* CATEGORY */
+
+    .category-btn {
+      border-radius: 50px;
+    }
+
+    /* MUSIC CARD */
+
+    .music-card {
+      background: #15151c;
+      border: 1px solid #292932;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .25s;
+      height: 100%;
+    }
+
+    .music-card:hover {
+      transform: translateY(-7px);
+      border-color: #0dcaf0;
+    }
+
+    .cover {
+      height: 200px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 70px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #6610f2,
+          #0dcaf0
+        );
+    }
+
+    .co
+```
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Music Vivo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #09090b;
+      color: white;
+      padding-bottom: 110px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 230px;
+      background: #111114;
+      border-right: 1px solid #29292e;
+      padding: 25px 15px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .logo span {
+      color: #ff2d55;
+    }
+
+    .menu button {
+      display: block;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #aaa;
+      padding: 14px;
+      margin-bottom: 7px;
+      border-radius: 10px;
+      text-align: left;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .menu button:hover,
+    .menu button.active {
+      background: #28282d;
+      color: white;
+    }
+
+    /* MAIN */
+    main {
+      margin-left: 230px;
+      padding: 30px;
+      max-width: 1300px;
+    }
+
+    .hero {
+      padding: 35px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #2b111c, #151519);
+      border: 1px solid #303036;
+      margin-bottom: 25px;
+    }
+
+    .hero small {
+      color: #ff2d55;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin: 12px 0;
+    }
+
+    .hero p {
+      color: #aaa;
+    }
+
+    /* SEARCH */
+    .search {
+      width: 100%;
+      padding: 15px;
+      background: #151519;
+      border: 1px solid #333;
+      border-radius: 12px;
+      color: white;
+      outline: none;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    /* CATEGORY */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 25px;
+    }
+
+    .category {
+      border: 1px solid #333;
+      background: #151519;
+      color: #aaa;
+      padding: 10px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .category:hover,
+    .category.active {
+      background: #ff2d55;
+      color: white;
+      border-color: #ff2d55;
+    }
+
+    /* SONG GRID */
+    .song-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 18px;
+    }
+
+    .song-card {
+      background: #151519;
+      border: 1px solid #29292e;
+      border-radius: 15px;
+      padding: 13px;
+      transition: 0.2s;
+    }
+
+    .song-card:hover {
+      transform: translateY(-4px);
+      border-color: #555;
+    }
+
+    .cover {
+      height: 170px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #30202a, #18181c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 55px;
+      margin-bottom: 12px;
+    }
+
+    .song-card h3 {
+      font-size: 16px;
+      margin: 5px 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .song-card p {
+      color: #888;
+      font-size: 13px;
+      margin: 0 0 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .play-button {
+      flex: 1;
+      border: none;
+      border-radius: 9px;
+      padding: 10px;
+      background: #ff2d55;
+      color: white;
+      cursor: pointer;
+    }
+
+    .favorite-button {
+      border: none;
+      border-radius: 9px;
+      padding: 10px 13px;
+      background: #29292e;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* PLAYER */
+    .player {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 95px;
+      background: rgba(18, 18, 22, 0.98);
+      border-top: 1px solid #303038;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 12px 22px;
+      z-index: 50;
+    }
+
+    .now-playing {
+      width: 230px;
+      min-width: 160px;
+    }
+
+    .now-playing strong {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .now-playing span {
+      color: #888;
+      font-size: 12px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .controls button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: #29292e;
+      color: white;
+      cursor: pointer;
+    }
+
+    .controls .main {
+      width: 46px;
+      height: 46px;
+      background: white;
+      color: black;
+    }
+
+    .timeline {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    #progress {
+      width: 100%;
+      accent-color: #ff2d55;
+    }
+
+    #volume {
+      width: 100px;
+      accent-color: #ff2d55;
+    }
+
+    .empty {
+      background: #151519;
+      border-radius: 14px;
+      padding: 30px;
+      text-align: center;
+      color: #888;
+    }
+
+    /* MOBILE */
+    @media (max-width: 750px) {
+
+      .sidebar {
+        top: auto;
+        width: 100%;
+        height: 65px;
+        padding: 5px;
+        border-right: none;
+        border-top: 1px solid #29292e;
+        z-index: 100;
+      }
+
+      .logo {
+        display: none;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .menu button {
+        width: auto;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+        font-size: 12px;
+      }
+
+      main {
+        margin-left: 0;
+        padding: 18px 14px 190px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .song-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .cover {
+        height: 130px;
+      }
+
+      .player {
+        bottom: 65px;
+        height: 120px;
+        padding: 10px;
+        flex-wrap: wrap;
+      }
+
+      .now-playing {
+        width: 100%;
+      }
+
+      .controls {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+      }
+
+      .timeline {
+        flex-basis: 100%;
+      }
+
+      #volume {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="logo">
+      🎵 MUSIC <span>VIVO</span>
+    </div>
+
+    <div class="menu">
+
+      <button class="active" onclick="showPage('home', this)">
+        🏠 Home
+      </button>
+
+      <button onclick="showPage('favorites', this)">
+        ❤️ Favorit
+      </button>
+
+      <button onclick="showPage('playlist', this)">
+        📀 Playlist
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home">
+
+      <div class="hero">
+
+        <small>MUSIC VIVO</small>
+
+        <h1>
+          Selamat Datang di Music Vivo
+        </h1>
+
+        <p>
+          Temukan dan dengarkan musik favoritmu.
+        </p>
+
+      </div>
+
+
+      <!-- SEARCH -->
+
+      <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔎 Cari lagu atau artis..."
+        oninput="renderSongs()"
+      >
+
+
+      <!-- CATEGORY -->
+
+      <div class="categories">
+
+        <button
+          class="category active"
+          onclick="setCategory('Semua', this)"
+        >
+          Semua
+        </button>
+
+        <button
+          class="category"
+          onclick="setCategory('Viral', this)"
+        >
+          🔥 Viral
+        </button>
+
+        <button
+          class="category"
+          onclick="setCategory('Rohani', this)"
+        >
+          ✝️ Rohani
+        </button>
+
+        <button
+          class="category"
+          onclick="setCategory('Indonesia', this)"
+        >
+          🇮🇩 Indonesia
+        </button>
+
+      </div>
+
+
+      <h2>🎧 Musik</h2>
+
+      <div
+        id="songGrid"
+        class="song-grid"
+      ></div>
+
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section
+      id="favorites"
+      style="display:none"
+    >
+
+      <div class="hero">
+
+        <small>MUSIC VIVO</small>
+
+        <h1>❤️ Favorit</h1>
+
+        <p>
+          Lagu favoritmu akan muncul di sini.
+        </p>
+
+      </div>
+
+      <div
+        id="favoriteGrid"
+        class="song-grid"
+      ></div>
+
+    </section>
+
+
+    <!-- PLAYLIST -->
+
+    <section
+      id="playlist"
+      style="display:none"
+    >
+
+      <div class="hero">
+
+        <small>MUSIC VIVO</small>
+
+        <h1>📀 Playlist</h1>
+
+        <p>
+          Fitur playlist akan dikembangkan pada versi berikutnya.
+        </p>
+
+      </div>
+
+      <div class="empty">
+
+        🎵 MUSIC VIVO PLAYLIST
+
+        <br><br>
+
+        V2 nanti kita bisa tambahkan
+        fitur membuat playlist sendiri.
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- AUDIO -->
+
+  <audio id="audio"></audio>
+
+
+  <!-- PLAYER -->
+
+  <div class="player">
+
+    <div class="now-playing">
+
+      <strong id="nowTitle">
+        Belum ada lagu
+      </strong>
+
+      <span id="nowArtist">
+        Pilih lagu untuk mulai
+      </span>
+
+    </div>
+
+
+    <div class="controls">
+
+      <button onclick="previousSong()">
+        ⏮
+      </button>
+
+      <button
+        class="main"
+        id="playButton"
+        onclick="togglePlay()"
+      >
+        ▶
+      </button>
+
+      <button onclick="nextSong()">
+        ⏭
+      </button>
+
+    </div>
+
+
+    <div class="timeline">
+
+      <span id="currentTime">
+        0:00
+      </span>
+
+      <input
+        id="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        oninput="seekSong(this.value)"
+      >
+
+      <span id="duration">
+        0:00
+      </span>
+
+    </div>
+
+
+    🔊
+
+    <input
+      id="volume"
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      value="0.8"
+      oninput="audio.volume = this.value"
+    >
+
+  </div>
+
+
+<script>
+
+  /* =========================
+     DATABASE LAGU
+  ========================= */
+
+  const songs = [
+
+    {
+      id: 1,
+      title: "Bapa Engkau Sungguh Baik",
+      artist: "Lagu Rohani",
+      category: "Rohani",
+      file: "music/bapa-engkau-sungguh-baik.mp3"
+    },
+
+    {
+      id: 2,
+      title: "Teruskanlah Firman",
+      artist: "Lagu Rohani",
+      category: "Rohani",
+      file: "music/teruskanlah-firman.mp3"
+    },
+
+    {
+      id: 3,
+      title: "Terpujilah Tuhan Yesus",
+      artist: "Lagu Rohani",
+      category: "Rohani",
+      file: "music/terpujilah-tuhan-yesus.mp3"
+    },
+
+    {
+      id: 4,
+      title: "Lagu Indonesia 01",
+      artist: "Artis Indonesia",
+      category: "Indonesia",
+      file: "music/indonesia-01.mp3"
+    },
+
+    {
+      id: 5,
+      title: "Lagu Viral 01",
+      artist: "Artis Favorit",
+      category: "Viral",
+      file: "music/viral-01.mp3"
+    },
+
+    {
+      id: 6,
+      title: "Lagu Viral 02",
+      artist: "Artis Favorit",
+      category: "Viral",
+      file: "music/viral-02.mp3"
+    }
+
+  ];
+
+
+  /* =========================
+     VARIABLES
+  ========================= */
+
+  const audio =
+    document.getElementById("audio");
+
+  let currentIndex = -1;
+
+  let category = "Semua";
+
+  let favorites =
+    JSON.parse(
+      localStorage.getItem(
+        "musicVivoFavorites"
+      ) || "[]"
+    );
+
+
+  /* =========================
+     RENDER SONGS
+  ========================= */
+
+  function renderSongs() {
+
+    const search =
+      document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const filtered =
+      songs.filter(song => {
+
+        const categoryMatch =
+          category === "Semua" ||
+          song.category === category;
+
+        const searchMatch =
+          song.title
+            .toLowerCase()
+            .includes(search)
+          ||
+          song.artist
+            .toLowerCase()
+            .includes(search);
+
+        return categoryMatch && searchMatch;
+
+      });
+
+
+    const grid =
+      document.getElementById(
+        "songGrid"
+      );
+
+
+    if (filtered.length === 0) {
+
+      grid.innerHTML =
+        `<div class="empty">
+          Musik tidak ditemukan.
+        </div>`;
+
+      return;
+
+    }
+
+
+    grid.innerHTML =
+      filtered
+        .map(songCard)
+        .join("");
+
+  }
+
+
+  /* =========================
+     SONG CARD
+  ========================= */
+
+  function songCard(song) {
+
+    const isFavorite =
+      favorites.includes(song.id);
+
+
+    return `
+
+      <div class="song-card">
+
+        <div class="cover">
+          🎵
+        </div>
+
+        <h3>
+          ${song.title}
+        </h3>
+
+        <p>
+          ${song.artist}
+        </p>
+
+        <div class="actions">
+
+          <button
+            class="play-button"
+            onclick="playSong(${song.id})"
+          >
+            ▶ Putar
+          </button>
+
+          <button
+            class="favorite-button"
+            onclick="toggleFavorite(${song.id})"
+          >
+            ${isFavorite ? "❤️" : "♡"}
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* =========================
+     CATEGORY
+  ========================= */
+
+  function setCategory(
+    selectedCategory,
+    button
+  ) {
+
+    category =
+      selectedCategory;
+
+
+    document
+      .querySelectorAll(".category")
+      .forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+
+    button.classList.add("active");
+
+
+    renderSongs();
+
+  }
+
+
+  /* =========================
+     PLAY SONG
+  ========================= */
+
+  function playSong(id) {
+
+    currentIndex =
+      songs.findIndex(
+        song => song.id === id
+      );
+
+
+    const song =
+      songs[currentIndex];
+
+
+    audio.src =
+      song.file;
+
+
+    document.getElementById(
+      "nowTitle"
+    ).textContent =
+      song.title;
+
+
+    document.getElementById(
+      "nowArtist"
+    ).textContent =
+      song.artist;
+
+
+    audio.play()
+      .then(() => {
+
+        document.getElementById(
+          "playButton"
+        ).textContent = "⏸";
+
+      })
+      .catch(() => {
+
+        alert(
+          "File musik belum ditemukan. " +
+          "Buat folder 'music' di samping index.html " +
+          "dan masukkan file audio yang sesuai."
+        );
+
+      });
+
+  }
+
+
+  /* =========================
+     PLAY / PAUSE
+  ========================= */
+
+  function togglePlay() {
+
+    if (currentIndex === -1) {
+
+      playSong(songs[0].id);
+
+      return;
+
+    }
+
+
+    if (audio.paused) {
+
+      audio.play();
+
+      document.getElementById(
+        "playButton"
+      ).textContent = "⏸";
+
+    } else {
+
+      audio.pause();
+
+      document.getElementById(
+        "playButton"
+      ).textContent = "▶";
+
+    }
+
+  }
+
+
+  /* =========================
+     NEXT
+  ========================= */
+
+  function nextSong() {
+
+    currentIndex =
+      (currentIndex + 1)
+      % songs.length;
+
+
+    playSong(
+      songs[currentIndex].id
+    );
+
+  }
+
+
+  /* =========================
+     PREVIOUS
+  ========================= */
+
+  function previousSong() {
+
+    currentIndex =
+      (currentIndex - 1 + songs.length)
+      % songs.length;
+
+
+    playSong(
+      songs[currentIndex].id
+    );
+
+  }
+
+
+  /* =========================
+     FAVORITE
+  ========================= */
+
+  function toggleFavorite(id) {
+
+    if (
+      favorites.includes(id)
+    ) {
+
+      favorites =
+        favorites.filter(
+          item => item !== id
+        );
+
+    } else {
+
+      favorites.push(id);
+
+    }
+
+
+    localStorage.setItem(
+      "musicVivoFavorites",
+      JSON.stringify(favorites)
+    );
+
+
+    renderSongs();
+
+    renderFavorites();
+
+  }
+
+
+  /* =========================
+     FAVORITE PAGE
+  ========================= */
+
+  function renderFavorites() {
+
+    const grid =
+      document.getElementById(
+        "favoriteGrid"
+      );
+
+
+    const favoriteSongs =
+      songs.filter(
+        song =>
+          favorites.includes(song.id)
+      );
+
+
+    if (favoriteSongs.length === 0) {
+
+      grid.innerHTML =
+        `<div class="empty">
+          Belum ada lagu favorit ❤️
+        </div>`;
+
+      return;
+
+    }
+
+
+    grid.innerHTML =
+      favoriteSongs
+        .map(songCard)
+        .join("");
+
+  }
+
+
+  /* =========================
+     PAGE NAVIGATION
+  ========================= */
+
+  function showPage(
+    page,
+    button
+  ) {
+
+    document.getElementById(
+      "home"
+    ).style.display = "none";
+
+    document.getElementById(
+      "favorites"
+    ).style.display = "none";
+
+    document.getElementById(
+      "playlist"
+    ).style.display = "none";
+
+
+    document.getElementById(
+      page
+    ).style.display = "block";
+
+
+    document
+      .querySelectorAll(".menu button")
+      .forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+
+    button.classList.add("active");
+
+
+    if (page === "favorites") {
+
+      renderFavorites();
+
+    }
+
+  }
+
+
+  /* =========================
+     TIME
+  ========================= */
+
+  function formatTime(seconds) {
+
+    if (!isFinite(seconds)) {
+
+      return "0:00";
+
+    }
+
+
+    const minutes =
+      Math.floor(seconds / 60);
+
+    const secs =
+      Math.floor(seconds % 60)
+        .toString()
+        .padStart(2, "0");
+
+
+    return `${minutes}:${secs}`;
+
+  }
+
+
+  /* =========================
+     AUDIO EVENTS
+  ========================= */
+
+  audio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+      document.getElementById(
+        "duration"
+      ).textContent =
+        formatTime(audio.duration);
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "timeupdate",
+    () => {
+
+      document.getElementById(
+        "currentTime"
+      ).textContent =
+        formatTime(
+          audio.currentTime
+        );
+
+
+      document.getElementById(
+        "progress"
+      ).value =
+        audio.duration
+          ? (audio.currentTime /
+              audio.duration) * 100
+          : 0;
+
+    }
+  );
+
+
+  audio.addEventListener(
+    "ended",
+    () => {
+
+      nextSong();
+
+    }
+  );
+
+
+  /* =========================
+     SEEK
+  ========================= */
+
+  function seekSong(value) {
+
+    if (!audio.duration) return;
+
+
+    audio.currentTime =
+      (value / 100)
+      * audio.duration;
+
+  }
+
+
+  /* =========================
+     START
+  ========================= */
+
+  renderSongs();
+  renderFavorites();
+
+</script>
+
+</body>
+</html>
